@@ -59,14 +59,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="NDI Monitor for Android TV\n\n準備接收 NDI 串流..."
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:fontFamily="sans-serif" />
+        <!-- Fragment 容器，將由 MainActivity 動態載入內容 -->
 
     </FrameLayout>
 

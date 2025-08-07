@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/tv_background_dark">
+
+    <!-- NDI 源標題 -->
+    <TextView
+        android:id="@+id/sources_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NDI 源列表"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- 掃描狀態指示器 -->
+    <LinearLayout
+        android:id="@+id/scanning_status_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <View
+            android:id="@+id/scanning_indicator"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/connection_status_indicator"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/scanning_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜尋 NDI 源中..."
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+    <!-- NDI 源列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ndi_sources_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:focusable="true"
+        android:descendantFocusability="afterDescendants" />
+
+    <!-- 空狀態視圖 -->
+    <LinearLayout
+        android:id="@+id/empty_state_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未發現 NDI 源"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="請確保網路連接正常，並檢查 NDI 源是否在同一網路中"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+</LinearLayout>
