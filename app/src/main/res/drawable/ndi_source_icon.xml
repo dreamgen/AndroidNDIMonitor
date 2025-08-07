@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- NDI 源圖標設計 -->
+    <path
+        android:pathData="M12,8 L36,8 L36,32 L30,32 L30,40 L18,40 L18,32 L12,32 Z"
+        android:fillColor="#2196F3"
+        android:strokeColor="#1976D2"
+        android:strokeWidth="1" />
+    
+    <!-- 螢幕內容區域 -->
+    <path
+        android:pathData="M14,10 L34,10 L34,30 L14,30 Z"
+        android:fillColor="#000000" />
+    
+    <!-- 播放圖標 -->
+    <path
+        android:pathData="M20,16 L20,24 L28,20 Z"
+        android:fillColor="#FFFFFF" />
+    
+    <!-- 信號線條 -->
+    <path
+        android:pathData="M16,12 L18,12 M20,12 L22,12 M24,12 L26,12"
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+    
+    <!-- 底座 -->
+    <path
+        android:pathData="M20,32 L28,32 L28,38 L20,38 Z"
+        android:fillColor="#666666" />
+
+</vector>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:keepScreenOn="true">
+
+    <!-- 視頻渲染容器 -->
+    <FrameLayout
+        android:id="@+id/video_render_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <!-- NDI 視頻渲染視圖 -->
+        <org.tpeyh.androidndimonitor.ui.VideoRenderView
+            android:id="@+id/video_render_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <!-- 載入指示器 -->
+        <LinearLayout
+            android:id="@+id/loading_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/loading_progress"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:indeterminateTint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="正在連接 NDI 源..."
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <!-- 錯誤狀態 -->
+        <LinearLayout
+            android:id="@+id/error_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="32dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_error"
+                android:tint="@color/error_color" />
+
+            <TextView
+                android:id="@+id/error_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="連接失敗"
+                android:textColor="@color/error_color"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/error_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="無法連接到 NDI 源"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/error_retry_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重試"
+                android:background="@drawable/tv_button_background"
+                android:textColor="@android:color/white"
+                android:padding="12dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- 控制欄 -->
+    <LinearLayout
+        android:id="@+id/control_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:background="@drawable/control_overlay_background"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <!-- NDI 源資訊 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/source_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NDI 源名稱"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/source_machine_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="機器名稱"
+                android:textColor="#CCCCCC"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/stream_info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1920x1080 @ 30fps"
+                android:textColor="#AAAAAA"
+                android:textSize="11sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <!-- 狀態指示器 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/stream_status_indicator"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/stream_status_indicator"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/stream_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="串流中"
+                android:textColor="#4CAF50"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- 關閉按鈕 -->
+        <ImageButton
+            android:id="@+id/close_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_close"
+            android:background="@drawable/tv_button_background"
+            android:scaleType="centerInside"
+            android:contentDescription="關閉"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+    </LinearLayout>
+
+    <!-- 底部資訊欄 -->
+    <LinearLayout
+        android:id="@+id/info_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@drawable/control_overlay_background"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/fps_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FPS: 30"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/bandwidth_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="頻寬: 12.5 Mbps"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/latency_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="延遲: 35ms"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

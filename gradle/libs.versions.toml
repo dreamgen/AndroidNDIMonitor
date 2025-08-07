@@ -1,0 +1,21 @@
+[versions]
+agp = "8.12.0"
+kotlin = "2.0.21"
+coreKtx = "1.10.1"
+leanback = "1.0.0"
+devolay = "2.1.1"
+lifecycle = "2.6.2"
+appcompat = "1.6.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-leanback = { group = "androidx.leanback", name = "leanback", version.ref = "leanback" }
+androidx-leanback-preference = { group = "androidx.leanback", name = "leanback-preference", version.ref = "leanback" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+devolay = { group = "me.walkerknapp", name = "devolay", version.ref = "devolay" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 串流中狀態 -->
+    <item android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="#4CAF50" />
+        </shape>
+    </item>
+    
+    <!-- 連接中狀態 -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#FF9800" />
+        </shape>
+    </item>
+    
+    <!-- 錯誤狀態 -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#F44336" />
+        </shape>
+    </item>
+</selector>

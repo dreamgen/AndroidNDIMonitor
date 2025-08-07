@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NDI Monitor</string>
+    <string name="ndi_sources">NDI Sources</string>
+    <string name="scanning_sources">Scanning for NDI sources...</string>
+    <string name="no_sources_found">No NDI sources found</string>
+    <string name="connecting">Connecting...</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connection_error">Connection error</string>
+</resources>

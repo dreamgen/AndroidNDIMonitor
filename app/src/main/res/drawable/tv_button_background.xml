@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- 選中狀態 -->
+    <item android:state_focused="true" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#1976D2" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- 焦點狀態 -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#2196F3" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+    
+    <!-- 按下狀態 -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#1565C0" />
+        </shape>
+    </item>
+    
+    <!-- 正常狀態 -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#424242" />
+        </shape>
+    </item>
+    
+</selector>

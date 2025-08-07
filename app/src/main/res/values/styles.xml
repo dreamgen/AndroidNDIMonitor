@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android TV Leanback 主題配置 -->
+    <style name="Theme.NDIMonitor" parent="@style/Theme.Leanback">
+        <item name="colorPrimary">@color/ndi_primary</item>
+        <item name="colorPrimaryDark">@color/ndi_primary_dark</item>
+        <item name="colorAccent">@color/ndi_accent</item>
+        <item name="android:windowBackground">@color/ndi_background</item>
+        <item name="android:colorBackground">@color/ndi_background</item>
+    </style>
+
+    <!-- NDI 源瀏覽主題 -->
+    <style name="Theme.NDIMonitor.Browse" parent="Theme.NDIMonitor">
+        <item name="browseTitleTextStyle">@style/NDIBrowseTitleText</item>
+        <item name="browseTitleIconStyle">@style/NDIBrowseTitleIcon</item>
+    </style>
+
+    <!-- NDI 瀏覽器標題文字樣式 -->
+    <style name="NDIBrowseTitleText" parent="@style/Widget.Leanback.Title.Text">
+        <item name="android:textColor">@color/ndi_text_primary</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- NDI 瀏覽器標題圖示樣式 -->
+    <style name="NDIBrowseTitleIcon" parent="@style/Widget.Leanback.Title.Icon">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+    </style>
+
+    <!-- NDI 源卡片樣式 -->
+    <style name="NDISourceCard">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">180dp</item>
+        <item name="android:background">@drawable/ndi_source_card_background</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- NDI 狀態指示器樣式 -->
+    <style name="NDIStatusIndicator">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:background">@drawable/connection_status_indicator</item>
+    </style>
+</resources>
